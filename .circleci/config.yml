@@ -50,7 +50,7 @@ jobs:
           name: deploy
           command: |
             if [ "${CIRCLE_BRANCH}" = "master" ]; then
-              scp -r target $SSH_USER@$SSH_IP:/data/www/
+              rsync -avce ssh target $SSH_USER@$SSH_IP:/data/www
             else
               echo "Not master branch, dry run only"
             fi
