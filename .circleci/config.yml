@@ -37,6 +37,8 @@ jobs:
             - ~/.m2
           key: v1-dependencies-{{ checksum "pom.xml" }}
 
+      - run: sudo apt-get update && sudo apt-get install rsync
+
       - add_ssh_keys:
           fingerprints:
             - "48:67:49:8e:80:76:70:d5:1f:43:ae:2a:aa:09:1d:0d"
