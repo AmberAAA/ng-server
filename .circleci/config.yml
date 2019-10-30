@@ -45,11 +45,12 @@ jobs:
 
       - run: echo $REMOTE_HOSTKEY >> ~/.ssh/known_hosts
 
+# rsync -avce ssh target $SSH_USER@$SSH_IP:/data/www
       - deploy:
           name: deploy
           command: |
             if [ "${CIRCLE_BRANCH}" = "master" ]; then
-              rsync -avce ssh target/server-0.0.1.jar $SSH_USER@$SSH_IP:/data/www
+              scp -r target $SSH_USER@$SSH_IP:/data/www/
             else
               echo "Not master branch, dry run only"
             fi
