@@ -17,16 +17,15 @@ class TodoMasterRepositoryTest {
     @Autowired
     private TodoMasterRepository repository;
 
-    @Test
-    @Transactional
-    public void saveOne () {
-        TodoMaster master = new TodoMaster("Amber");
-        repository.save(master);
-    }
-
-    @Test
-    public void getChild () {
-        TodoMaster master = repository.findById(14).get();
-        log.info(master.toString());
-    }
+//    @Test
+//    @Transactional
+//    public void saveOne () {
+//        TodoMaster master = new TodoMaster("Amber");
+//        repository.save(master);
+//    }
+//
+//    public void getChild () {
+//        TodoMaster master = repository.findById(14).get();
+//        log.info(master.toString());
+//    }
 }

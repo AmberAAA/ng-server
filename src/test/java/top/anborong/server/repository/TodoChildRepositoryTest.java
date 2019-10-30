@@ -16,14 +16,14 @@ class TodoChildRepositoryTest {
 
     @Autowired TodoMasterRepository masterRepository;
 
-    @Test
-    @Transactional
-    public void saveOne () {
-
-        TodoMaster master = new TodoMaster("test");
-        master = masterRepository.saveAndFlush(master);
-
-        TodoChild child = new TodoChild("test child",0, master);
-        repository.save(child);
-    }
+//    @Test
+//    @Transactional
+//    public void saveOne () {
+//
+//        TodoMaster master = new TodoMaster("test");
+//        master = masterRepository.saveAndFlush(master);
+//
+//        TodoChild child = new TodoChild("test child",0, master);
+//        repository.save(child);
+//    }
 }
