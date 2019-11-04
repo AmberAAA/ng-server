@@ -20,3 +20,13 @@ CREATE TABLE `server-dev`.`todo_child`(
                                           FOREIGN KEY (`master_id`) REFERENCES `server-dev`.`todo_master`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE
 ) ENGINE=INNODB CHARSET=utf8mb4;
 
+
+CREATE TABLE `server-dev`.`user`(
+                                          `id` INT(32) UNSIGNED NOT NULL AUTO_INCREMENT,
+                                          `name` VARCHAR(32),
+                                          `password` VARCHAR(32),
+                                          `create_time` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                                          `update_time` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+                                          PRIMARY KEY (`id`),
+                                          UNIQUE INDEX `idx_name` (`name`)
+) ENGINE=INNODB CHARSET=utf8mb4;
