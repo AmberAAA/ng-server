@@ -50,7 +50,10 @@ jobs:
           name: deploy
           command: |
             if [ "${CIRCLE_BRANCH}" = "master" ]; then
-              rsync -avce ssh target $SSH_USER@$SSH_IP:/data/www
+              rsync -avce ssh target/ $SSH_USER@$SSH_IP:/data/www
+              ssh $SSH_USER@$SSH_IP
+              systemctl restart spring
+              exit
             else
               echo "Not master branch, dry run only"
             fi
