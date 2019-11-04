@@ -9,3 +9,6 @@ spring:
     url: jdbc:mysql://anborong.top/server-dev
     username: root
     password: Superadmin123
+server:
+  servlet:
+    context-path: /api
