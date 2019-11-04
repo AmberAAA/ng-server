@@ -9,4 +9,9 @@ public class VersionController {
     public String version () {
         return "v-0.0.1";
     }
+
+    @GetMapping("/api/version")
+    public String version1 () {
+        return "v-0.0.1";
+    }
 }
