@@ -30,3 +30,21 @@ CREATE TABLE `server-dev`.`user`(
                                           PRIMARY KEY (`id`),
                                           UNIQUE INDEX `idx_name` (`name`)
 ) ENGINE=INNODB CHARSET=utf8mb4;
+
+CREATE TABLE `server-dev`.`project_item`(
+                                    `id` INT(32) UNSIGNED NOT NULL AUTO_INCREMENT,
+                                    `name` VARCHAR(64),
+                                    `parent` INT(32),
+                                    `create_time` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                                    `update_time` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+                                    PRIMARY KEY (`id`)
+) ENGINE=INNODB CHARSET=utf8mb4;
+
+CREATE TABLE `server-dev`.`project_time`(
+                                            `id` INT(32) UNSIGNED NOT NULL AUTO_INCREMENT,
+                                            `project_id` INT(32),
+                                            `time` INT,
+                                            `create_time` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                                            `update_time` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+                                            PRIMARY KEY (`id`)
+) ENGINE=INNODB CHARSET=utf8mb4;

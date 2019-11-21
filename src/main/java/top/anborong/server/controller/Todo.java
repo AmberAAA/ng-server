@@ -1,8 +1,7 @@
 package top.anborong.server.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import top.anborong.server.dataobject.TodoMaster;
 import top.anborong.server.repository.TodoMasterRepository;
 
@@ -17,5 +16,10 @@ public class Todo {
     @GetMapping("/todo")
     public List<TodoMaster> getTodos() {
         return repository.findAll();
+    }
+
+    @PostMapping("/todo")
+    public TodoMaster saveTodo(@RequestBody TodoMaster todoMaster) {
+        return repository.save(todoMaster);
     }
 }
